@@ -13,7 +13,7 @@ public partial class World : Node2D
 		 _collisionPolygon2D = GetNode<CollisionPolygon2D>("CollisionPolygon2D");
 		 _polygon = GetNode<Polygon2D>("Polygon2D");
 
-		// _polygon.Polygons = (Vector2)collisionPolygon2D.Polygon;
+		_polygon.Polygon = _collisionPolygon2D.Polygon;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
