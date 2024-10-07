@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxrsibrfmx7dq"]
+[gd_scene load_steps=8 format=3 uid="uid://dxrsibrfmx7dq"]
 
 [ext_resource type="Script" path="res://World.cs" id="1_g54ss"]
 [ext_resource type="PackedScene" uid="uid://b2wjfwr8tn0t4" path="res://player.tscn" id="2_5r7st"]
+[ext_resource type="PackedScene" uid="uid://c003ty0egvrp" path="res://light_tree_2.tscn" id="3_b4xit"]
+[ext_resource type="PackedScene" uid="uid://qb4mmpc55nlt" path="res://tree_1.tscn" id="3_ry5wm"]
+[ext_resource type="PackedScene" uid="uid://brgmgry0ku0wd" path="res://light_tree_1.tscn" id="4_skpwh"]
+[ext_resource type="PackedScene" uid="uid://dpc4b15iivd11" path="res://tree_3.tscn" id="6_0onp1"]
+[ext_resource type="PackedScene" uid="uid://c8n1dmgu0nl4p" path="res://tree_2.tscn" id="7_sep8p"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_g54ss")
@@ -17,3 +22,21 @@ color = Color(0.247059, 0.211765, 0.188235, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_5r7st")]
 position = Vector2(40, 112)
+
+[node name="LightTree2" parent="." instance=ExtResource("3_b4xit")]
+position = Vector2(88, 12)
+
+[node name="LightTree1" parent="." instance=ExtResource("4_skpwh")]
+position = Vector2(176, 0)
+
+[node name="Tree1" parent="." instance=ExtResource("3_ry5wm")]
+position = Vector2(32, 16)
+
+[node name="Tree3" parent="." instance=ExtResource("6_0onp1")]
+position = Vector2(134, 14)
+
+[node name="Tree2" parent="." instance=ExtResource("3_ry5wm")]
+position = Vector2(228, 10)
+
+[node name="Tree4" parent="." instance=ExtResource("7_sep8p")]
+position = Vector2(312, 16)
