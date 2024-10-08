@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 100.0f;
+	public const float Speed = 100.0f; // pixels/second
 	public const float JumpVelocity = -200.0f;
 	public float Health = 100.0f;
 	public Vector2 ScreenSize;
