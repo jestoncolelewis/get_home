@@ -21,27 +21,27 @@ polygon = PackedVector2Array(0, 0, 16, 0, 16, 128, 192, 128, 256, 96, 272, 96, 2
 color = Color(0.247059, 0.211765, 0.188235, 1)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(304, 96, 304, 184, 320, 184, 320, 96)
+polygon = PackedVector2Array(304, 96, 304, 184, 320, 184, 328, 184, 328, 0, 320, 0, 320, 96)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D2"]
 
-[node name="Player" parent="." instance=ExtResource("2_5r7st")]
-position = Vector2(40, 112)
-
-[node name="LightTree2" parent="." instance=ExtResource("3_b4xit")]
+[node name="LightTree2" parent="StaticBody2D" instance=ExtResource("3_b4xit")]
 position = Vector2(88, 12)
 
-[node name="LightTree1" parent="." instance=ExtResource("4_skpwh")]
+[node name="LightTree1" parent="StaticBody2D" instance=ExtResource("4_skpwh")]
 position = Vector2(176, 0)
 
-[node name="Tree1" parent="." instance=ExtResource("3_ry5wm")]
+[node name="Tree1" parent="StaticBody2D" instance=ExtResource("3_ry5wm")]
 position = Vector2(32, 16)
 
-[node name="Tree3" parent="." instance=ExtResource("6_0onp1")]
+[node name="Tree3" parent="StaticBody2D" instance=ExtResource("6_0onp1")]
 position = Vector2(134, 14)
 
-[node name="Tree2" parent="." instance=ExtResource("3_ry5wm")]
+[node name="Tree2" parent="StaticBody2D" instance=ExtResource("3_ry5wm")]
 position = Vector2(228, 10)
 
-[node name="Tree4" parent="." instance=ExtResource("7_sep8p")]
+[node name="Tree4" parent="StaticBody2D" instance=ExtResource("7_sep8p")]
 position = Vector2(312, 16)
+
+[node name="Player" parent="." instance=ExtResource("2_5r7st")]
+position = Vector2(40, 112)
