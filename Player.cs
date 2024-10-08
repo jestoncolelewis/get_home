@@ -43,5 +43,14 @@ public partial class Player : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+		
+		if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
+	}
+
+	private void _TakeDamageOnScreenExit()
+	{
+		GD.Print(Health);
+		Health -= Health;
+		GD.Print(Health);
 	}
 }
