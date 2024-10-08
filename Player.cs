@@ -7,10 +7,16 @@ public partial class Player : CharacterBody2D
 	public const float JumpVelocity = -200.0f;
 	public float Health = 100.0f;
 	public Vector2 ScreenSize;
+	public PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
 
 	public override void _Ready()
 	{
 		ScreenSize = GetViewportRect().Size;
+	}
+
+	public override void _Process(double delta)
+	{
+		_SkillLoop();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -44,7 +50,7 @@ public partial class Player : CharacterBody2D
 		Velocity = velocity;
 		MoveAndSlide();
 		
-		if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
+		// if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
 	}
 
 	private void _TakeDamageOnScreenExit()
@@ -52,5 +58,16 @@ public partial class Player : CharacterBody2D
 		GD.Print(Health);
 		Health -= Health;
 		GD.Print(Health);
+	}
+
+	private void _SkillLoop()
+	{
+		if (Input.IsActionJustPressed("shoot"))
+		{
+			var bulletInstance = Bullet.Instantiate<Node2D>();
+			bulletInstance.Position = GetGlobalPosition();
+			bulletInstance.Rotation = GetAngleTo(GetGlobalMousePosition());
+			GetParent().AddChild(bulletInstance);
+		}
 	}
 }
