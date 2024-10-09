@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddgnmh0pf7a83"]
 
-[ext_resource type="Script" path="res://Bullet.cs" id="1_n24bd"]
-[ext_resource type="Texture2D" uid="uid://d07r2yssslkcv" path="res://art/bullet.svg" id="1_y6087"]
+[ext_resource type="Script" path="res://scenes/common/prefabs/Bullet.cs" id="1_n24bd"]
+[ext_resource type="Texture2D" uid="uid://d07r2yssslkcv" path="res://scenes/common/assets/art/bullet.svg" id="1_y6087"]
 
 [node name="Bullet" type="RigidBody2D"]
 collision_layer = 4

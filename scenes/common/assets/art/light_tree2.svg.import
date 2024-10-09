@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfobe64ys6yjs"
-path="res://.godot/imported/light_tree3.svg-4f815223701af97dd90e61bb6d892e62.ctex"
+uid="uid://dx7m10towwfxb"
+path="res://.godot/imported/light_tree2.svg-fb2b6540bd09fb70c2b56020f7412545.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/light_tree3.svg"
-dest_files=["res://.godot/imported/light_tree3.svg-4f815223701af97dd90e61bb6d892e62.ctex"]
+source_file="res://scenes/common/assets/art/light_tree2.svg"
+dest_files=["res://.godot/imported/light_tree2.svg-fb2b6540bd09fb70c2b56020f7412545.ctex"]
 
 [params]
 

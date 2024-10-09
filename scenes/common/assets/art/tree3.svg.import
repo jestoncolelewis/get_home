@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbl5agidarmr3"
-path="res://.godot/imported/knife.svg-d94d95ed8fb6013f51959248588ca20a.ctex"
+uid="uid://cdhyo4xbo4nf3"
+path="res://.godot/imported/tree3.svg-7eb78c65d095c88e5da282eea799a63e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/knife.svg"
-dest_files=["res://.godot/imported/knife.svg-d94d95ed8fb6013f51959248588ca20a.ctex"]
+source_file="res://scenes/common/assets/art/tree3.svg"
+dest_files=["res://.godot/imported/tree3.svg-7eb78c65d095c88e5da282eea799a63e.ctex"]
 
 [params]
 
