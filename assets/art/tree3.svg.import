@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdkrm2aeyv3h1"
-path="res://.godot/imported/handgun.svg-e44b3ca616a0e8663265154665943f52.ctex"
+uid="uid://cdhyo4xbo4nf3"
+path="res://.godot/imported/tree3.svg-51897a216ee2ec672d361beae7a2167c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/common/assets/art/handgun.svg"
-dest_files=["res://.godot/imported/handgun.svg-e44b3ca616a0e8663265154665943f52.ctex"]
+source_file="res://assets/art/tree3.svg"
+dest_files=["res://.godot/imported/tree3.svg-51897a216ee2ec672d361beae7a2167c.ctex"]
 
 [params]
 
