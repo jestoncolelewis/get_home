@@ -18,8 +18,9 @@ public partial class Bullet : RigidBody2D
 	{
 	}
 
-	public void _SelfDestruct()
+	public async void _SelfDestruct()
 	{
-		GetTree().CreateTimer(LifeTime);
+		await ToSignal(GetTree().CreateTimer(LifeTime), "timeout");
+		QueueFree();
 	}
 }
