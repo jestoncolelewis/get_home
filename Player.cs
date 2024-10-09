@@ -7,7 +7,10 @@ public partial class Player : CharacterBody2D
 	public const float JumpVelocity = -200.0f;
 	public float Health = 100.0f;
 	public Vector2 ScreenSize;
+	
 	public PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
+	public float RateOfFire = 0.5f;
+	public bool CanFire = true;
 
 	public override void _Ready()
 	{
