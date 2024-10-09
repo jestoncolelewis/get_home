@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmkkv357tp0nv"]
 
-[ext_resource type="Texture2D" uid="uid://cfobe64ys6yjs" path="res://art/light_tree3.svg" id="1_ypy28"]
+[ext_resource type="Texture2D" uid="uid://cfobe64ys6yjs" path="res://scenes/common/assets/art/light_tree3.svg" id="1_ypy28"]
 
 [node name="LightTree3" type="Node2D"]
 
