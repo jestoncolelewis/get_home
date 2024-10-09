@@ -18,6 +18,8 @@ animations = [{
 size = Vector2(8, 21)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 25
 script = ExtResource("1_fuulc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -27,3 +29,8 @@ animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2etoi")
+
+[node name="Turn Axis" type="Marker2D" parent="."]
+
+[node name="SpawnPoint" type="Marker2D" parent="Turn Axis"]
+position = Vector2(12, 0)
