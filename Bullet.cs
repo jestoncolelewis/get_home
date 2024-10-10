@@ -16,11 +16,23 @@ public partial class Bullet : RigidBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		OnBulletBodyEntered(this);
 	}
 
 	public async void _SelfDestruct()
 	{
 		await ToSignal(GetTree().CreateTimer(LifeTime), "timeout");
 		QueueFree();
+	}
+
+	private void OnBulletBodyEntered(Node body)
+	{
+		if (body is Bullet bullet)
+		{
+			if (bullet.GetContactCount() > 0)
+			{
+				bullet.Hide();
+			}
+		}
 	}
 }
