@@ -5,6 +5,7 @@
 [node name="Moquito" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 7
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-4, -4, -6, 2, -14, 6, -4, 9, 0, 2, 3, 2, 6, 6, 11, 8, 14, 4, 7, 3, 9, 1, 12, -4, 9, -6, 4, -5, 2, -7)
