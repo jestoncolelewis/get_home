@@ -12,4 +12,9 @@ public partial class Hornet : RigidBody2D
 	public override void _Process(double delta)
 	{
 	}
+
+	private void OnVisibleOnScreenNotifier2DScreenExited()
+	{
+		QueueFree();
+	}
 }

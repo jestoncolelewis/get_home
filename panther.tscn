@@ -15,3 +15,9 @@ polygon = PackedVector2Array(-285, 71, -186, 67, -64, 44, -11, 12, -9, 50, 17, 1
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("1_2634v")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1, -0.5)
+scale = Vector2(2.3, 1.25)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
