@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://duqldji1fybe1"]
+[gd_scene load_steps=13 format=3 uid="uid://duqldji1fybe1"]
 
 [ext_resource type="Script" path="res://World.cs" id="1_g54ss"]
 [ext_resource type="PackedScene" uid="uid://b2wjfwr8tn0t4" path="res://player.tscn" id="2_5r7st"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://brgmgry0ku0wd" path="res://light_tree_1.tscn" id="4_skpwh"]
 [ext_resource type="PackedScene" uid="uid://dpc4b15iivd11" path="res://tree_3.tscn" id="6_0onp1"]
 [ext_resource type="PackedScene" uid="uid://c8n1dmgu0nl4p" path="res://tree_2.tscn" id="7_sep8p"]
+[ext_resource type="PackedScene" uid="uid://cpeov7yu42ifw" path="res://snake.tscn" id="8_03m6m"]
+[ext_resource type="PackedScene" uid="uid://c4k6idexsaau2" path="res://hornet.tscn" id="9_fy2cy"]
+[ext_resource type="PackedScene" uid="uid://ct5rbvesxqjax" path="res://monkey.tscn" id="10_bokix"]
+[ext_resource type="PackedScene" uid="uid://d0soj1jefvqnp" path="res://moquito.tscn" id="11_i5s3q"]
+[ext_resource type="PackedScene" uid="uid://dq2uplup0taka" path="res://panther.tscn" id="12_ljari"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_g54ss")
@@ -57,3 +62,18 @@ position = Vector2(312, 16)
 
 [node name="Player" parent="." instance=ExtResource("2_5r7st")]
 position = Vector2(28, 117)
+
+[node name="Snake" parent="." instance=ExtResource("8_03m6m")]
+position = Vector2(112, 116)
+
+[node name="Hornet" parent="." instance=ExtResource("9_fy2cy")]
+position = Vector2(128, 107)
+
+[node name="Monkey" parent="." instance=ExtResource("10_bokix")]
+position = Vector2(136, 40)
+
+[node name="Moquito" parent="." instance=ExtResource("11_i5s3q")]
+position = Vector2(144, 104)
+
+[node name="Panther" parent="." instance=ExtResource("12_ljari")]
+position = Vector2(176, 116)
