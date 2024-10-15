@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq2uplup0taka"]
+
+[ext_resource type="Texture2D" uid="uid://bn88m5rent184" path="res://assets/art/panther.svg" id="1_2634v"]
+
+[node name="Panther" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, -13, -23, -14, -32, -20, -32, -24, -34, -24, -35, -23, -40, -23, -44, -24, -43, -20, -44, -18, -45, -14, -41, -9, -39, -9, -38, -10, -35, -5, -33, 3, -30, 15, -30, 19, -33, 20, -34, 21, -31, 24, -25, 24, -25, 16, -23, 5, -13, 5, -6, 4, -1, 1, 1, 10, 3, 15, 3, 18, 0, 21, -2, 21, -4, 22, -2, 24, 3, 24, 10, 16, 8, 14, 9, 8, 17, 16, 16, 20, 13, 20, 11, 22, 13, 23, 18, 23, 21, 15, 21, 13, 16, 4, 16, -1, 17, -1, 22, 9, 29, 14, 33, 15, 38, 15, 43, 11, 45, 7, 43, 3, 41, 3, 41, 9, 37, 12, 32, 11, 26, 8, 18, -8, 14, -11, 6, -14, 0, -14)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_2634v")

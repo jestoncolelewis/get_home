@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0soj1jefvqnp"]
+
+[ext_resource type="Texture2D" uid="uid://d05m0v4g6oihw" path="res://assets/art/mosquito.svg" id="1_c804k"]
+
+[node name="Moquito" type="RigidBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -4, -6, 2, -14, 6, -4, 9, 0, 2, 3, 2, 6, 6, 11, 8, 14, 4, 7, 3, 9, 1, 12, -4, 9, -6, 4, -5, 2, -7)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_c804k")
