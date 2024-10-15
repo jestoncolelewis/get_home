@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpeov7yu42ifw"]
+
+[ext_resource type="Texture2D" uid="uid://vlqq4m6x6pkt" path="res://assets/art/snake.svg" id="1_a8set"]
+
+[node name="Snake" type="RigidBody2D"]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.02, 0.02)
+polygon = PackedVector2Array(104, -416, 64, -424, 16, -424, -72, -392, -96, -368, -120, -296, -120, -240, -8, 32, -64, 296, -72, 352, -120, 344, -152, 352, -176, 392, -376, 392, -416, 408, -448, 440, -448, 512, -416, 544, -200, 560, 216, 560, 328, 512, 328, 472, 304, 448, 304, 400, 248, 344, 208, 344, 152, 304, 104, 304, 80, 312, 80, 296, 128, 152, 128, 88, 112, 32, 48, -120, -16, -256, -16, -296, 32, -344, 96, -376, 104, -392)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_a8set")
