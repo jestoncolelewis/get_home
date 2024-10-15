@@ -11,6 +11,16 @@
 [node name="World" type="Node2D"]
 script = ExtResource("1_g54ss")
 
+[node name="TextureRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 328.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.0784314, 0.137255, 1)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
 metadata/_edit_group_ = true
