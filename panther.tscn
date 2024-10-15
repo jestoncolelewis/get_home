@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq2uplup0taka"]
+[gd_scene load_steps=3 format=3 uid="uid://dq2uplup0taka"]
 
 [ext_resource type="Texture2D" uid="uid://bn88m5rent184" path="res://assets/art/panther.svg" id="1_2634v"]
+[ext_resource type="Script" path="res://Panther.cs" id="1_h865r"]
 
 [node name="Panther" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 7
+script = ExtResource("1_h865r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.04, 0.04)
