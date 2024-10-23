@@ -63,7 +63,7 @@ color = Color(0.247059, 0.211765, 0.188235, 1)
 [node name="Player" parent="." instance=ExtResource("2_5r7st")]
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(32, 104)
+position = Vector2(24, 105)
 
 [node name="HornetPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_7gu3j")
