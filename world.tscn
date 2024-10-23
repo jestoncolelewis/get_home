@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duqldji1fybe1"]
+[gd_scene load_steps=12 format=3 uid="uid://duqldji1fybe1"]
 
 [ext_resource type="Script" path="res://World.cs" id="1_g54ss"]
 [ext_resource type="PackedScene" uid="uid://b2wjfwr8tn0t4" path="res://player.tscn" id="2_5r7st"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d0soj1jefvqnp" path="res://mosquito.tscn" id="4_go7ja"]
 [ext_resource type="PackedScene" uid="uid://dq2uplup0taka" path="res://panther.tscn" id="5_r0vh6"]
 [ext_resource type="PackedScene" uid="uid://cpeov7yu42ifw" path="res://snake.tscn" id="6_ep2bs"]
+[ext_resource type="AudioStream" uid="uid://k60w1ffn0aq8" path="res://assets/music/main_theme_v1.wav" id="7_xcn0h"]
 
 [sub_resource type="Curve2D" id="Curve2D_7gu3j"]
 _data = {
@@ -99,3 +100,7 @@ position = Vector2(248, 88)
 rotation = 2.67795
 
 [node name="Snake" parent="SnakePath/SnakeSpawnLocation" instance=ExtResource("6_ep2bs")]
+
+[node name="MainThemeV1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xcn0h")
+autoplay = true
