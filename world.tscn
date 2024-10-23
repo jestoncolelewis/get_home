@@ -35,16 +35,6 @@ point_count = 3
 [node name="World" type="Node"]
 script = ExtResource("1_g54ss")
 
-[node name="TextureRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 328.0
-offset_bottom = 184.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.101961, 0.0784314, 0.137255, 1)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_mask = 30
 metadata/_edit_group_ = true
@@ -63,10 +53,13 @@ color = Color(0.247059, 0.211765, 0.188235, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_5r7st")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(24, 105)
 
 [node name="HornetPath" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_7gu3j")
 
 [node name="HornetSpawnLocation" type="PathFollow2D" parent="HornetPath"]
@@ -76,6 +69,7 @@ rotates = false
 [node name="Hornet" parent="HornetPath/HornetSpawnLocation" instance=ExtResource("2_vfmqk")]
 
 [node name="MosquitoPath" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_2cvir")
 
 [node name="MosquitoSpawnLocation" type="PathFollow2D" parent="MosquitoPath"]
@@ -85,6 +79,7 @@ rotation = -0.156602
 [node name="Mosquito" parent="MosquitoPath/MosquitoSpawnLocation" instance=ExtResource("4_go7ja")]
 
 [node name="PantherPath" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_iqvle")
 
 [node name="PantherSpawnLocation" type="PathFollow2D" parent="PantherPath"]
@@ -93,6 +88,7 @@ position = Vector2(56, 120)
 [node name="Panther" parent="PantherPath/PantherSpawnLocation" instance=ExtResource("5_r0vh6")]
 
 [node name="SnakePath" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_1p4y1")
 
 [node name="SnakeSpawnLocation" type="PathFollow2D" parent="SnakePath"]
