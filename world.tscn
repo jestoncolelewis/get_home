@@ -1,102 +1,73 @@
-[gd_scene load_steps=12 format=3 uid="uid://duqldji1fybe1"]
+[gd_scene load_steps=12 format=4 uid="uid://duqldji1fybe1"]
 
 [ext_resource type="Script" path="res://World.cs" id="1_g54ss"]
 [ext_resource type="PackedScene" uid="uid://b2wjfwr8tn0t4" path="res://player.tscn" id="2_5r7st"]
-[ext_resource type="PackedScene" uid="uid://c4k6idexsaau2" path="res://hornet.tscn" id="2_vfmqk"]
-[ext_resource type="PackedScene" uid="uid://d0soj1jefvqnp" path="res://mosquito.tscn" id="4_go7ja"]
-[ext_resource type="PackedScene" uid="uid://dq2uplup0taka" path="res://panther.tscn" id="5_r0vh6"]
-[ext_resource type="PackedScene" uid="uid://cpeov7yu42ifw" path="res://snake.tscn" id="6_ep2bs"]
-[ext_resource type="AudioStream" uid="uid://k60w1ffn0aq8" path="res://assets/music/main_theme_v1.wav" id="7_xcn0h"]
+[ext_resource type="Texture2D" uid="uid://b2d0jo3dpjphs" path="res://assets/art/d.svg" id="3_5nii4"]
+[ext_resource type="Texture2D" uid="uid://bv7j3jh1458lp" path="res://assets/art/dg.svg" id="4_nl1on"]
+[ext_resource type="Texture2D" uid="uid://p0jln5tn4lof" path="res://assets/art/l.svg" id="5_oueri"]
+[ext_resource type="Texture2D" uid="uid://d4jywy2l4kbfw" path="res://assets/art/lg.svg" id="6_n4bks"]
 
-[sub_resource type="Curve2D" id="Curve2D_7gu3j"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 256, 80, 0, 0, 0, 0, 312, 80, 0, 0, 0, 0, 312, 56, 0, 0, 0, 0, 256, 56, 0, 0, 0, 0, 256, 80)
-}
-point_count = 5
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1qn2"]
+texture = ExtResource("3_5nii4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 
-[sub_resource type="Curve2D" id="Curve2D_2cvir"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 80, 104, 0, 0, 0, 0, 232, 80, 0, 0, 0, 0, 80, 104)
-}
-point_count = 3
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nystl"]
+texture = ExtResource("4_nl1on")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 
-[sub_resource type="Curve2D" id="Curve2D_iqvle"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 56, 120, 0, 0, 0, 0, 184, 120, 0, 0, 0, 0, 56, 120)
-}
-point_count = 3
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kyvrx"]
+texture = ExtResource("5_oueri")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 
-[sub_resource type="Curve2D" id="Curve2D_1p4y1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 248, 88, 0, 0, 0, 0, 200, 112, 0, 0, 0, 0, 248, 88)
-}
-point_count = 3
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypo5r"]
+texture = ExtResource("6_n4bks")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cnomh"]
+sources/0 = SubResource("TileSetAtlasSource_n1qn2")
+sources/1 = SubResource("TileSetAtlasSource_nystl")
+sources/2 = SubResource("TileSetAtlasSource_kyvrx")
+sources/3 = SubResource("TileSetAtlasSource_ypo5r")
 
 [node name="World" type="Node"]
 script = ExtResource("1_g54ss")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 30
-metadata/_edit_group_ = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 16, 0, 16, 128, 192, 128, 256, 96, 272, 96, 272, 184, 0, 184)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
-color = Color(0.247059, 0.211765, 0.188235, 1)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(304, 96, 304, 184, 320, 184, 328, 184, 328, 0, 320, 0, 320, 96)
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D2"]
-color = Color(0.247059, 0.211765, 0.188235, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_5r7st")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(24, 105)
-
-[node name="HornetPath" type="Path2D" parent="."]
-visible = false
-curve = SubResource("Curve2D_7gu3j")
-
-[node name="HornetSpawnLocation" type="PathFollow2D" parent="HornetPath"]
-position = Vector2(256, 80)
-rotates = false
-
-[node name="Hornet" parent="HornetPath/HornetSpawnLocation" instance=ExtResource("2_vfmqk")]
-
-[node name="MosquitoPath" type="Path2D" parent="."]
-visible = false
-curve = SubResource("Curve2D_2cvir")
-
-[node name="MosquitoSpawnLocation" type="PathFollow2D" parent="MosquitoPath"]
-position = Vector2(80, 104)
-rotation = -0.156602
-
-[node name="Mosquito" parent="MosquitoPath/MosquitoSpawnLocation" instance=ExtResource("4_go7ja")]
-
-[node name="PantherPath" type="Path2D" parent="."]
-visible = false
-curve = SubResource("Curve2D_iqvle")
-
-[node name="PantherSpawnLocation" type="PathFollow2D" parent="PantherPath"]
-position = Vector2(56, 120)
-
-[node name="Panther" parent="PantherPath/PantherSpawnLocation" instance=ExtResource("5_r0vh6")]
-
-[node name="SnakePath" type="Path2D" parent="."]
-visible = false
-curve = SubResource("Curve2D_1p4y1")
-
-[node name="SnakeSpawnLocation" type="PathFollow2D" parent="SnakePath"]
-position = Vector2(248, 88)
-rotation = 2.67795
-
-[node name="Snake" parent="SnakePath/SnakeSpawnLocation" instance=ExtResource("6_ep2bs")]
-
-[node name="MainThemeV1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_xcn0h")
-autoplay = true
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAASAAsAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAAOAAUAAwAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAUAAwAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAUAAwAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAUAAwAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAASAAUAAwAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAATAAUAAwAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAAUAAUAAwAAAAAAAAAUAAYAAQAAAAAAAAAUAAcAAQAAAAAAAAAUAAgAAQAAAAAAAAAUAAkAAQAAAAAAAAAUAAoAAQAAAAAAAAAUAAsAAQAAAAAAAAAVAAUAAwAAAAAAAAAVAAYAAQAAAAAAAAAVAAcAAQAAAAAAAAAVAAgAAQAAAAAAAAAVAAkAAQAAAAAAAAAVAAoAAQAAAAAAAAAVAAsAAQAAAAAAAAAWAAUAAwAAAAAAAAAWAAYAAQAAAAAAAAAWAAcAAQAAAAAAAAAWAAgAAQAAAAAAAAAWAAkAAQAAAAAAAAAWAAoAAQAAAAAAAAAWAAsAAQAAAAAAAAAXAAUAAwAAAAAAAAAXAAYAAQAAAAAAAAAXAAcAAQAAAAAAAAAXAAgAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAsAAQAAAAAAAAAYAAUAAwAAAAAAAAAYAAYAAQAAAAAAAAAYAAcAAQAAAAAAAAAYAAgAAQAAAAAAAAAYAAkAAQAAAAAAAAAYAAoAAQAAAAAAAAAYAAsAAQAAAAAAAAAZAAUAAwAAAAAAAAAZAAYAAQAAAAAAAAAZAAcAAQAAAAAAAAAZAAgAAQAAAAAAAAAZAAkAAQAAAAAAAAAZAAoAAQAAAAAAAAAZAAsAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_cnomh")
