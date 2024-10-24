@@ -20,8 +20,5 @@ public partial class World : Node
 
 	public void NewGame()
 	{
-		var player = GetNode<Player>("Player");
-		var startPosition = GetNode<Marker2D>("StartPosition");
-		player.Start(startPosition.Position);
 	}
 }
