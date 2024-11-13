@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2wjfwr8tn0t4"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_fuulc"]
-[ext_resource type="Texture2D" uid="uid://c1r7874tg14lj" path="res://assets/art/player.svg" id="2_mhg2h"]
+[ext_resource type="Texture2D" uid="uid://ptq78vp56mhj" path="res://assets/art/player.png" id="2_dw70k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ra2e2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mhg2h")
+"texture": ExtResource("2_dw70k")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2etoi"]
-size = Vector2(8, 21)
+size = Vector2(10, 27)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -23,11 +23,11 @@ collision_mask = 25
 script = ExtResource("1_fuulc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.0125714, 0.0125714)
 sprite_frames = SubResource("SpriteFrames_ra2e2")
 animation = &"new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_2etoi")
 
 [node name="Turn Axis" type="Marker2D" parent="."]
