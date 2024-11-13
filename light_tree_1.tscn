@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://brgmgry0ku0wd"]
-
-[ext_resource type="Texture2D" uid="uid://dj2fkwauvyglw" path="res://scenes/common/assets/art/light_tree1.svg" id="1_t0nvk"]
-
-[node name="LightTree1" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("1_t0nvk")
