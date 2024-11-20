@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Bullet : RigidBody2D
+public partial class Bullet : Sprite2D
 {
 	public float BulletSpeed = 500f;
 	public float LifeTime = 3f;
