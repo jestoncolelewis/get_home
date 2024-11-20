@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4k6idexsaau2"]
+[gd_scene load_steps=4 format=3 uid="uid://c4k6idexsaau2"]
 
 [ext_resource type="Script" path="res://Hornet.cs" id="1_ko8fd"]
 [ext_resource type="Texture2D" uid="uid://co1gv578g3qqr" path="res://assets/art/hornet.png" id="2_7qqxb"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f501s"]
+size = Vector2(9, 10)
+
 [node name="Hornet" type="RigidBody2D"]
 collision_layer = 8
-collision_mask = 7
 gravity_scale = 0.0
 script = ExtResource("1_ko8fd")
 metadata/_edit_group_ = true
@@ -18,8 +20,13 @@ polygon = PackedVector2Array(-1220.9, -955.88, -1220.9, 237.72, -522.386, 237.72
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7qqxb")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(2.38419e-07, 2.38419e-07)
-scale = Vector2(0.5, 0.4)
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_f501s")
+debug_color = Color(0.676746, 0.419939, 0.735286, 0.42)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="OnHurtboxAreaEntered"]
