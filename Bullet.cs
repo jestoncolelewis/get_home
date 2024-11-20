@@ -9,7 +9,6 @@ public partial class Bullet : RigidBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		ApplyImpulse(impulse: new Vector2(BulletSpeed, 0).Rotated(Rotation), new Vector2(0,0)); // TODO fix this
 		_SelfDestruct();
 	}
 
