@@ -25,14 +25,8 @@ public partial class Bullet : RigidBody2D
 		QueueFree();
 	}
 
-	private void OnBulletBodyEntered(Node body)
+	private void OnHitboxAreaEntered()
 	{
-		if (body is Bullet bullet)
-		{
-			if (bullet.GetContactCount() > 0)
-			{
-				bullet.Hide();
-			}
-		}
+		GD.Print("Hitbox entered");
 	}
 }
