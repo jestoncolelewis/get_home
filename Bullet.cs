@@ -18,9 +18,9 @@ public partial class Bullet : Sprite2D
 	{
 	}
 
-	public void _PhysicsProcess(float delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		MoveLocalX(Direction * BulletSpeed * delta);
+		MoveLocalX(Direction * BulletSpeed * (float)delta);
 	}
 
 	public async void _SelfDestruct()
