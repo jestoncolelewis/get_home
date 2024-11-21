@@ -74,8 +74,10 @@ public partial class Player : CharacterBody2D
 	{
 		if (Input.IsActionJustPressed("shoot"))
 		{
+			float direction = Input.GetVector("move_left", "move_right", "jump", "crouch").X; 
 			GetNode<Node2D>("Turn Axis").Rotation = GetAngleTo(GetGlobalMousePosition());
-			var bulletInstance = Bullet.Instantiate<Node2D>();
+			var bulletInstance = Bullet.Instantiate<Bullet>();
+			bulletInstance.Direction = direction;
 			bulletInstance.Position = GetNode<Node2D>("Turn Axis/SpawnPoint").GetGlobalPosition();
 			bulletInstance.Rotation = GetAngleTo(GetGlobalMousePosition());
 			GetParent().AddChild(bulletInstance);
