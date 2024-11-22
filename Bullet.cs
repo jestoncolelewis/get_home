@@ -5,7 +5,6 @@ public partial class Bullet : Sprite2D
 {
 	public float BulletSpeed = 500f;
 	public float LifeTime = .5f;
-	public float Direction;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,7 +19,7 @@ public partial class Bullet : Sprite2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		MoveLocalX(Direction * BulletSpeed * (float)delta);
+		MoveLocalX(BulletSpeed * (float)delta);
 	}
 
 	public async void _SelfDestruct()
