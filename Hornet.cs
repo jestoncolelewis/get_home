@@ -31,6 +31,15 @@ public partial class Hornet : RigidBody2D
 
 	private void OnHurtboxAreaEntered(Area2D area)
 	{
-		GD.Print("Hurtbox entered");
+		if (area.GetParent().HasMethod("GetDamage"))
+		{
+			var node = area.GetParent<Bullet>();
+			Health -= node.Damage;
+
+			if (Health <= 0)
+			{
+				QueueFree();
+			}
+		}
 	}
 }
