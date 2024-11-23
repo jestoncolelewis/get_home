@@ -6,7 +6,7 @@ public partial class Hornet : RigidBody2D
 	[Export]
 	PathFollow2D _pathFollow2D;
 	private float _speed = 10.0f;
-	public float Health = 100.0f; 
+	private int Health = 5;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
