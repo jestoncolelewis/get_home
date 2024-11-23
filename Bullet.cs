@@ -33,5 +33,9 @@ public partial class Bullet : Sprite2D
 	{
 		GD.Print("Bullet area entered");
 	}
+
+	private void OnHitboxBodyEntered(Node2D body)
+	{
+		GD.Print("Bullet body entered");
 	}
 }
