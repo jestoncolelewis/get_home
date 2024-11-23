@@ -29,7 +29,7 @@ public partial class Hornet : RigidBody2D
 		_pathFollow2D.SetProgress(_pathFollow2D.GetProgress() + _speed * (float)delta);
 	}
 
-	private void OnHurtboxAreaEntered()
+	private void OnHurtboxAreaEntered(Area2D area)
 	{
 		GD.Print("Hurtbox entered");
 	}
