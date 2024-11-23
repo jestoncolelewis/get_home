@@ -29,6 +29,11 @@ public partial class Bullet : Sprite2D
 		QueueFree();
 	}
 
+	public int GetDamage()
+	{
+		return Damage;
+	}
+
 	private void OnHitboxAreaEntered(Area2D area)
 	{
 		GD.Print("Bullet area entered");
