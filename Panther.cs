@@ -6,6 +6,7 @@ public partial class Panther : RigidBody2D
 	[Export]
 	PathFollow2D _pathFollow2D;
 	private float _speed = 15.0f;
+	private int Health = 20;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,8 +29,18 @@ public partial class Panther : RigidBody2D
 		_pathFollow2D.SetProgress(_pathFollow2D.GetProgress() + _speed * (float)delta);
 	}
 
-	private void OnVisibleOnScreenNotifier2DScreenExited()
+	private void OnPantherHurtboxAreaEntered(Area2D area)
 	{
-		QueueFree();
+		if (area.GetParent().HasMethod("GetDamage"))
+		{
+			var node = area.GetParent<Bullet>();
+			Health -= node.GetDamage();
+			GD.Print("Health: " + Health);
+
+			if (Health <= 0)
+			{
+				QueueFree();
+			}
+		}
 	}
 }
