@@ -89,6 +89,8 @@ public partial class Player : CharacterBody2D
 		if (body.IsInGroup("enemy"))
 		{
 			GD.Print("Enemy entered");
+			HealthMonitor.Instance.DecreaseHealth(1);
+			GD.Print(HealthMonitor.Instance.current_health.ToString());
 		}
 	}
 }
