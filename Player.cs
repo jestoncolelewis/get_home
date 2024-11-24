@@ -65,9 +65,11 @@ public partial class Player : CharacterBody2D
 
 	private void _TakeDamageOnScreenExit()
 	{
-		GD.Print(Health);
 		Health -= Health;
-		GD.Print(Health);
+		if (Health <= 0)
+		{
+			GD.Print("Game Over");
+		}
 	}
 
 	private void _SkillLoop()
