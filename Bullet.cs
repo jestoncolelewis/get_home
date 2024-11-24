@@ -5,7 +5,7 @@ public partial class Bullet : Sprite2D
 {
 	private float BulletSpeed = 500f;
 	private float LifeTime = .5f;
-	public int Damage = 1;
+	private int Damage = 1;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -36,11 +36,11 @@ public partial class Bullet : Sprite2D
 
 	private void OnHitboxAreaEntered(Area2D area)
 	{
-		GD.Print("Bullet area entered");
+		QueueFree();
 	}
 
 	private void OnHitboxBodyEntered(Node2D body)
 	{
-		GD.Print("Bullet body entered");
+		QueueFree();
 	}
 }
