@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	public const float Speed = 100.0f; // pixels/second
 	public const float JumpVelocity = -300.0f;
-	public float Health = 100.0f;
+	public int Health = 100;
 	public Vector2 ScreenSize;
 	
 	public PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
