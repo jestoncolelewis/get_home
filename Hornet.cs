@@ -34,7 +34,7 @@ public partial class Hornet : RigidBody2D
 		if (area.GetParent().HasMethod("GetDamage"))
 		{
 			var node = area.GetParent<Bullet>();
-			Health -= node.Damage;
+			Health -= node.GetDamage();
 
 			if (Health <= 0)
 			{
