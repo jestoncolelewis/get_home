@@ -31,6 +31,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="get_home"
 
+[global_group]
+
+enemy=""
+
 [input]
 
 move_right={
