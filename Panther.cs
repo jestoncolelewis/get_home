@@ -35,7 +35,6 @@ public partial class Panther : RigidBody2D
 		{
 			var node = area.GetParent<Bullet>();
 			Health -= node.GetDamage();
-			GD.Print("Health: " + Health);
 
 			if (Health <= 0)
 			{
