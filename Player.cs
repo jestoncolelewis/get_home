@@ -83,4 +83,12 @@ public partial class Player : CharacterBody2D
 			GetParent().AddChild(bulletInstance);
 		}
 	}
+
+	private void OnHurtboxBodyEntered(Node2D body)
+	{
+		if (body.IsInGroup("enemy"))
+		{
+			GD.Print("Enemy entered");
+		}
+	}
 }

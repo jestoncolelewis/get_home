@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2wjfwr8tn0t4"]
+[gd_scene load_steps=6 format=3 uid="uid://b2wjfwr8tn0t4"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_fuulc"]
 [ext_resource type="Texture2D" uid="uid://ptq78vp56mhj" path="res://assets/art/player.png" id="2_dw70k"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2etoi"]
 size = Vector2(10, 27)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3rxc"]
+size = Vector2(12, 25)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 25
@@ -34,3 +37,14 @@ shape = SubResource("RectangleShape2D_2etoi")
 
 [node name="SpawnPoint" type="Marker2D" parent="Turn Axis"]
 position = Vector2(12, 0)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3rxc")
+debug_color = Color(0.959792, 2.88785e-07, 0.519655, 0.42)
+
+[connection signal="body_entered" from="Hurtbox" to="." method="OnHurtboxBodyEntered"]
