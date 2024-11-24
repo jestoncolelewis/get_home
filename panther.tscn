@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxjl7"]
 size = Vector2(44, 15)
 
-[node name="Panther" type="RigidBody2D"]
+[node name="Panther" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 8
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_h865r")
 metadata/_edit_group_ = true
 

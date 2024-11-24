@@ -7,6 +7,7 @@ public partial class Panther : RigidBody2D
 	PathFollow2D _pathFollow2D;
 	private float _speed = 15.0f;
 	private int Health = 20;
+	private int Damage = 20;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -21,6 +22,11 @@ public partial class Panther : RigidBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		MoveLoop(delta);
+	}
+
+	public int GetDamage()
+	{
+		return Damage;
 	}
 	
 	private void MoveLoop(double delta)
