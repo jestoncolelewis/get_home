@@ -8,6 +8,9 @@ public partial class HealthMonitor : Node
 	public int max_health = 100;
 	public int current_health;
 	
+	[Signal]
+	public delegate void OnHealthChangedEventHandler(int health);
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -29,6 +32,7 @@ public partial class HealthMonitor : Node
 		{
 			current_health = 0;
 		}
+		EmitSignal(SignalName.OnHealthChanged, current_health);
 	}
 
 	public void IncreaseHealth(int amount)
@@ -39,5 +43,6 @@ public partial class HealthMonitor : Node
 		{
 			current_health = max_health;
 		}
+		EmitSignal(SignalName.OnHealthChanged, current_health);
 	}
 }

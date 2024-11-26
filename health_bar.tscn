@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy5ccqpr8ni37"]
+[gd_scene load_steps=3 format=3 uid="uid://cy5ccqpr8ni37"]
 
 [ext_resource type="Texture2D" uid="uid://b3cgtp30vmije" path="res://assets/art/health_full.png" id="1_quelo"]
+[ext_resource type="Script" path="res://HealthBar.cs" id="1_xhj6r"]
 
 [node name="HealthBar" type="Node2D"]
+script = ExtResource("1_xhj6r")
 
 [node name="Health_1" type="Sprite2D" parent="."]
 position = Vector2(4, 4)

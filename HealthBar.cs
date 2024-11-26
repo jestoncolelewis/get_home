@@ -21,7 +21,7 @@ public partial class HealthBar : Node2D
 		Health_4 = GetNode<Sprite2D>("Health_4");
 		Health_5 = GetNode<Sprite2D>("Health_5");
 		
-		
+		AddUserSignal("OnHealthChanged");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
