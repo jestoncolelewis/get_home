@@ -11,6 +11,9 @@ public partial class Player : CharacterBody2D
 	public PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
 	public float RateOfFire = 0.5f;
 	public bool CanFire = true;
+	
+	PackedScene Panther = GD.Load<PackedScene>("res://panther.tscn");
+	PackedScene Hornet = GD.Load<PackedScene>("res://hornet.tscn");
 
 	public override void _Ready()
 	{
@@ -88,9 +91,19 @@ public partial class Player : CharacterBody2D
 	{
 		if (body.IsInGroup("enemy"))
 		{
-			GD.Print("Enemy entered");
-			HealthMonitor.Instance.DecreaseHealth(1);
-			GD.Print(HealthMonitor.Instance.current_health.ToString());
+			GD.Print(body.Name.ToString() + " entered");
+			if (body.Name.ToString() == "Panther")
+			{
+				var pantherInstance = Panther.Instantiate<Panther>();
+				HealthMonitor.Instance.DecreaseHealth(pantherInstance.GetDamage());
+				GD.Print(HealthMonitor.Instance.current_health.ToString());
+			}
+			else if (body.Name.ToString() == "Hornet")
+			{
+				var hornetInstance = Hornet.Instantiate<Hornet>();
+				HealthMonitor.Instance.DecreaseHealth(hornetInstance.GetDamage());
+				GD.Print(HealthMonitor.Instance.current_health.ToString());
+			}
 		}
 	}
 }
