@@ -3,14 +3,14 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float Speed = 100.0f; // pixels/second
-	public const float JumpVelocity = -300.0f;
-	public int Health = 100;
-	public Vector2 ScreenSize;
-	
-	public PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
-	public float RateOfFire = 0.5f;
-	public bool CanFire = true;
+	private const float Speed = 100.0f; // pixels/second
+	private const float JumpVelocity = -300.0f;
+	private int Health = 100;
+	private Vector2 ScreenSize;
+
+	private PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
+	private float RateOfFire = 0.5f;
+	private bool CanFire = true;
 	
 	PackedScene Panther = GD.Load<PackedScene>("res://panther.tscn");
 	PackedScene Hornet = GD.Load<PackedScene>("res://hornet.tscn");
@@ -59,7 +59,7 @@ public partial class Player : CharacterBody2D
 		// if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
 	}
 
-	public void Start(Vector2 position)
+	private void Start(Vector2 position)
 	{
 		Position = position;
 		Show();

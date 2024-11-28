@@ -4,8 +4,8 @@ using System;
 public partial class HealthMonitor : Node
 {
 	public static HealthMonitor Instance { get; private set; }
-	
-	public int max_health = 5;
+
+	private int max_health = 5;
 	public int current_health;
 	
 	[Signal]

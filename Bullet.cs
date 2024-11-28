@@ -23,7 +23,7 @@ public partial class Bullet : Sprite2D
 		MoveLocalX(BulletSpeed * (float)delta);
 	}
 
-	public async void _SelfDestruct()
+	private async void _SelfDestruct()
 	{
 		await ToSignal(GetTree().CreateTimer(LifeTime), "timeout");
 		QueueFree();
