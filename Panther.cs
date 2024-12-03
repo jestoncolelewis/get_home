@@ -9,6 +9,9 @@ public partial class Panther : RigidBody2D
 	private int Health = 20;
 	private int Damage = 20;
 	
+	[Signal]
+	public delegate void DestroyedEventHandler();
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -44,6 +47,7 @@ public partial class Panther : RigidBody2D
 
 			if (Health <= 0)
 			{
+				EmitSignal(SignalName.Destroyed);
 				QueueFree();
 			}
 		}
