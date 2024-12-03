@@ -112,4 +112,8 @@ rotates = false
 
 [node name="GameScreen" parent="." index="9" instance=ExtResource("4_0ygb4")]
 
+[connection signal="Destroyed" from="hornet/Path2D/PathFollow2D/Hornet" to="." method="OnEnemyDestruction"]
+[connection signal="Destroyed" from="hornet2/Path2D/PathFollow2D/Hornet" to="." method="OnEnemyDestruction"]
+[connection signal="Destroyed" from="panther/Path2D/PathFollow2D/Panther" to="." method="OnEnemyDestruction"]
+[connection signal="Destroyed" from="panther2/Path2D/PathFollow2D/Panther" to="." method="OnEnemyDestruction"]
 [connection signal="StartGame" from="GameScreen" to="." method="NewGame"]
