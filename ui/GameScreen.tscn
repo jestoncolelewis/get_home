@@ -1,7 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://brvn0sx656pp3"]
+[gd_scene load_steps=3 format=3 uid="uid://brvn0sx656pp3"]
 
 [ext_resource type="PackedScene" uid="uid://cy5ccqpr8ni37" path="res://health_bar.tscn" id="1_0wih3"]
+[ext_resource type="Script" path="res://ui/GameScreen.cs" id="1_1q8j4"]
 
 [node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_1q8j4")
 
 [node name="HealthBar" parent="." instance=ExtResource("1_0wih3")]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 295.0
+offset_right = 320.0
+offset_bottom = 25.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -15.5
+offset_right = 28.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+icon_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
