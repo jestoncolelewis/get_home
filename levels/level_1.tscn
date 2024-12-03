@@ -111,3 +111,5 @@ rotates = false
 [node name="Panther" parent="panther2/Path2D/PathFollow2D" index="0" instance=ExtResource("3_u7gk6")]
 
 [node name="GameScreen" parent="." index="9" instance=ExtResource("4_0ygb4")]
+
+[connection signal="StartGame" from="GameScreen" to="." method="NewGame"]
