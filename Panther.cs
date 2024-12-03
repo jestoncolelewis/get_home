@@ -5,9 +5,9 @@ public partial class Panther : RigidBody2D
 {
 	[Export]
 	PathFollow2D _pathFollow2D;
-	private float _speed = 15.0f;
-	private int Health = 20;
-	private int Damage = 20;
+	private float _speed = 10.0f;
+	private int Health = 5;
+	private int Damage = 2;
 	
 	[Signal]
 	public delegate void DestroyedEventHandler();
