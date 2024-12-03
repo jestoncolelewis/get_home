@@ -31,4 +31,10 @@ public partial class World : Node
 		
 		gameScreen.UpdateScore(_score);
 	}
+
+	private void OnEnemyDestruction()
+	{
+		_score++;
+		gameScreen.UpdateScore(_score);
+	}
 }
