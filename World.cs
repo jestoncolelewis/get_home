@@ -28,7 +28,6 @@ public partial class World : Node
 	{
 		player.Show();
 		_score = 0;
-		
 		gameScreen.UpdateScore(_score);
 	}
 
