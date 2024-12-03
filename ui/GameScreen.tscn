@@ -7,13 +7,18 @@
 script = ExtResource("1_1q8j4")
 
 [node name="HealthBar" parent="." instance=ExtResource("1_0wih3")]
+position = Vector2(5, 5)
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 295.0
-offset_right = 320.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_right = -5.0
 offset_bottom = 25.0
+grow_horizontal = 0
 text = "0"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
@@ -30,5 +35,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "START"
 icon_alignment = 1
+
+[node name="TimeLeft" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 30.0
+offset_right = -5.0
+offset_bottom = 55.0
+grow_horizontal = 0
+text = "90.0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
 
 [connection signal="pressed" from="StartButton" to="." method="OnStartButtonPressed"]
