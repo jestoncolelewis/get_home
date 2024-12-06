@@ -6,6 +6,9 @@ public partial class World : Node
 	Player player;
 	GameScreen gameScreen;
 	
+	[Export]
+	public PackedScene EnemyScene { get; set; }
+	
 	private int _score;
 	
 	public override void _Ready()
@@ -14,6 +17,7 @@ public partial class World : Node
 		player.Hide();
 		gameScreen = GetNode<GameScreen>("GameScreen");
 		gameScreen.StartScreen();
+		GetNode<Timer>("EnemyTimer").Start();
 	}
 	
 	public override void _Process(double delta)
@@ -31,9 +35,26 @@ public partial class World : Node
 		gameScreen.UpdateScore(_score);
 	}
 
-	private void OnEnemyDestruction()
+	private void OnHornetDestroyed()
 	{
 		_score++;
 		gameScreen.UpdateScore(_score);
+	}
+
+	private void OnEnemyTimerTimeout()
+	{
+		Hornet hornet = EnemyScene.Instantiate<Hornet>();
+		
+		PathFollow2D hornetSpawnLoc1 = GetNode<PathFollow2D>("EnemyPath1/EnemySpawnLoc1");
+		hornetSpawnLoc1.ProgressRatio = GD.Randf();
+
+		float direction = hornetSpawnLoc1.Rotation + Mathf.Pi / 2;
+		
+		hornet.Position = hornetSpawnLoc1.Position;
+		
+		direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
+		hornet.Rotation = direction;
+
+		AddChild(hornet);
 	}
 }

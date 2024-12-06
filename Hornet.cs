@@ -24,18 +24,11 @@ public partial class Hornet : RigidBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		MoveLoop(delta);
 	}
 	
 	public int GetDamage()
 	{
 		return Damage;
-	}
-
-	private void MoveLoop(double delta)
-	{
-		_pathFollow2D = GetParent<PathFollow2D>();
-		_pathFollow2D.SetProgress(_pathFollow2D.GetProgress() + _speed * (float)delta);
 	}
 
 	private void OnHurtboxAreaEntered(Area2D area)
