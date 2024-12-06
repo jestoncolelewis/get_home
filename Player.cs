@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	private const float Speed = 100.0f; // pixels/second
+	private const float Speed = 100.0f;
 	private const float JumpVelocity = -300.0f;
 	private int Health = 100;
 	private Vector2 ScreenSize;
@@ -12,7 +12,6 @@ public partial class Player : CharacterBody2D
 	private float RateOfFire = 0.5f;
 	private bool CanFire = true;
 	
-	PackedScene Panther = GD.Load<PackedScene>("res://panther.tscn");
 	PackedScene Hornet = GD.Load<PackedScene>("res://hornet.tscn");
 
 	public override void _Ready()
@@ -92,18 +91,9 @@ public partial class Player : CharacterBody2D
 		if (body.IsInGroup("enemy"))
 		{
 			GD.Print(body.Name.ToString() + " entered");
-			if (body.Name.ToString() == "Panther")
-			{
-				var pantherInstance = Panther.Instantiate<Panther>();
-				HealthMonitor.Instance.DecreaseHealth(pantherInstance.GetDamage());
-				GD.Print(HealthMonitor.Instance.current_health.ToString());
-			}
-			else if (body.Name.ToString() == "Hornet")
-			{
 				var hornetInstance = Hornet.Instantiate<Hornet>();
 				HealthMonitor.Instance.DecreaseHealth(hornetInstance.GetDamage());
 				GD.Print(HealthMonitor.Instance.current_health.ToString());
-			}
 		}
 	}
 }
