@@ -10,6 +10,8 @@ public partial class World : Node
 	public PackedScene EnemyScene { get; set; }
 	
 	private int _score;
+
+	private EnemyMonitor _enemyMonitor;
 	
 	public override void _Ready()
 	{
@@ -18,6 +20,9 @@ public partial class World : Node
 		gameScreen = GetNode<GameScreen>("GameScreen");
 		gameScreen.StartScreen();
 		GetNode<Timer>("EnemyTimer").Start();
+
+		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
+		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
 	}
 	
 	public override void _Process(double delta)
@@ -35,7 +40,7 @@ public partial class World : Node
 		gameScreen.UpdateScore(_score);
 	}
 
-	private void OnHornetDestroyed()
+	private void OnEnemyDestroyed()
 	{
 		_score++;
 		gameScreen.UpdateScore(_score);
