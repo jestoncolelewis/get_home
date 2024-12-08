@@ -26,10 +26,12 @@ public partial class GameScreen : CanvasLayer
 	{
 		GetNode<Label>("ScoreLabel").Hide();
 		GetNode<Node2D>("HealthBar").Hide();
+		GetNode<Label>("TimeLeft").Hide();
 	}
 
 	private void OnStartButtonPressed()
 	{
+		GetNode<Label>("TimeLeft").Show();
 		GetNode<Timer>("Timer").Start();
 		GetNode<Button>("StartButton").Hide();
 		GetNode<Label>("ScoreLabel").Show();
