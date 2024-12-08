@@ -90,10 +90,8 @@ public partial class Player : CharacterBody2D
 	{
 		if (body.IsInGroup("enemy"))
 		{
-			GD.Print(body.Name.ToString() + " entered");
-				var hornetInstance = Hornet.Instantiate<Hornet>();
-				HealthMonitor.Instance.DecreaseHealth(hornetInstance.GetDamage());
-				GD.Print(HealthMonitor.Instance.current_health.ToString());
+			var hornetInstance = Hornet.Instantiate<Hornet>();
+			HealthMonitor.Instance.DecreaseHealth(hornetInstance.GetDamage());
 		}
 	}
 }
