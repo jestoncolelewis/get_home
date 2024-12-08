@@ -58,5 +58,7 @@ public partial class World : Node
 		hornet.RotationDegrees = 0.0f;
 
 		AddChild(hornet);
+
+		hornet.LinearVelocity = player.GlobalPosition - hornetSpawnLoc1.GlobalPosition;
 	}
 }
