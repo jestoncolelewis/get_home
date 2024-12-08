@@ -19,12 +19,11 @@ public partial class World : Node
 		player.Hide();
 		gameScreen = GetNode<GameScreen>("GameScreen");
 		gameScreen.StartScreen();
-		GetNode<Timer>("EnemyTimer").Start();
 
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
 	}
-	
+
 	public override void _Process(double delta)
 	{
 	}
@@ -35,6 +34,7 @@ public partial class World : Node
 
 	public void NewGame()
 	{
+		GetNode<Timer>("EnemyTimer").Start();
 		player.Show();
 		_score = 0;
 		gameScreen.UpdateScore(_score);
