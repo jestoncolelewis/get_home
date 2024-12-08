@@ -53,12 +53,9 @@ public partial class World : Node
 		PathFollow2D hornetSpawnLoc1 = GetNode<PathFollow2D>("EnemyPath1/EnemySpawnLoc1");
 		hornetSpawnLoc1.ProgressRatio = GD.Randf();
 
-		float direction = hornetSpawnLoc1.Rotation + Mathf.Pi / 2;
-		
 		hornet.Position = hornetSpawnLoc1.Position;
-		
-		direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
-		hornet.Rotation = direction;
+
+		hornet.RotationDegrees = 0.0f;
 
 		AddChild(hornet);
 	}
