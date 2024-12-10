@@ -9,30 +9,30 @@ public partial class GameScreen : CanvasLayer
 	[Signal]
 	public delegate void GameOverEventHandler();
 	
-	private Label timeLeft;
-	private Timer timer;
-	private Label finalMessage;
-	private Label finalScore;
+	private Label _timeLeft;
+	private Timer _timer;
+	private Label _finalMessage;
+	private Label _finalScore;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		timeLeft = GetNode<Label>("TimeLeft");
-		timer = GetNode<Timer>("Timer");
-		finalMessage = GetNode<Label>("FinalMessage");
-		finalScore = GetNode<Label>("FinalScore");
+		_timeLeft = GetNode<Label>("TimeLeft");
+		_timer = GetNode<Timer>("Timer");
+		_finalMessage = GetNode<Label>("FinalMessage");
+		_finalScore = GetNode<Label>("FinalScore");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		timeLeft.Text = timer.TimeLeft.ToString("0.0");
+		_timeLeft.Text = _timer.TimeLeft.ToString("0.0");
 	}
 
 	public void StartScreen()
 	{
-		finalMessage.Hide();
-		finalScore.Hide();
+		_finalMessage.Hide();
+		_finalScore.Hide();
 		GetNode<Label>("ScoreLabel").Hide();
 		GetNode<Node2D>("HealthBar").Hide();
 		GetNode<Label>("TimeLeft").Hide();
@@ -55,15 +55,15 @@ public partial class GameScreen : CanvasLayer
 
 	public void GameOverScreen(int score)
 	{
-		timeLeft.Hide();
+		_timeLeft.Hide();
 		GetNode<Label>("ScoreLabel").Hide();
 		GetNode<Node2D>("HealthBar").Hide();
-		finalMessage.Show();
-		finalScore.Text = score.ToString();
-		finalScore.Show();
+		_finalMessage.Show();
+		_finalScore.Text = score.ToString();
+		_finalScore.Show();
 	}
 
-	public void OnTimerTimeout()
+	private void OnTimerTimeout()
 	{
 		EmitSignal(SignalName.GameOver);
 	}

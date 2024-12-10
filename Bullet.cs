@@ -3,9 +3,9 @@ using System;
 
 public partial class Bullet : Sprite2D
 {
-	private float BulletSpeed = 500f;
-	private float LifeTime = .5f;
-	private int Damage = 1;
+	private float _bulletSpeed = 500f;
+	private float _lifeTime = .5f;
+	private int _damage = 1;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,18 +20,18 @@ public partial class Bullet : Sprite2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		MoveLocalX(BulletSpeed * (float)delta);
+		MoveLocalX(_bulletSpeed * (float)delta);
 	}
 
 	private async void _SelfDestruct()
 	{
-		await ToSignal(GetTree().CreateTimer(LifeTime), "timeout");
+		await ToSignal(GetTree().CreateTimer(_lifeTime), "timeout");
 		QueueFree();
 	}
 
 	public int GetDamage()
 	{
-		return Damage;
+		return _damage;
 	}
 
 	private void OnHitboxAreaEntered(Area2D area)

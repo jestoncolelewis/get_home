@@ -3,8 +3,8 @@ using System;
 
 public partial class World : Node
 {
-	Player player;
-	GameScreen gameScreen;
+	private Player _player;
+	private GameScreen _gameScreen;
 	
 	[Export]
 	public PackedScene EnemyScene { get; set; }
@@ -16,10 +16,10 @@ public partial class World : Node
 	
 	public override void _Ready()
 	{
-		player = GetNode<Player>("Player");
-		player.Hide();
-		gameScreen = GetNode<GameScreen>("GameScreen");
-		gameScreen.StartScreen();
+		_player = GetNode<Player>("Player");
+		_player.Hide();
+		_gameScreen = GetNode<GameScreen>("GameScreen");
+		_gameScreen.StartScreen();
 
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
@@ -31,25 +31,25 @@ public partial class World : Node
 	{
 	}
 
-	public void GameOver()
+	private void GameOver()
 	{
-		player.Hide();
-		gameScreen.GameOverScreen(_score);
+		_player.Hide();
+		_gameScreen.GameOverScreen(_score);
 		_enemyTimer.Stop();
 	}
 
-	public void NewGame()
+	private void NewGame()
 	{
 		_enemyTimer.Start();
-		player.Show();
+		_player.Show();
 		_score = 0;
-		gameScreen.UpdateScore(_score);
+		_gameScreen.UpdateScore(_score);
 	}
 
 	private void OnEnemyDestroyed()
 	{
 		_score++;
-		gameScreen.UpdateScore(_score);
+		_gameScreen.UpdateScore(_score);
 	}
 
 	private void OnEnemyTimerTimeout()
@@ -65,6 +65,6 @@ public partial class World : Node
 
 		AddChild(hornet);
 
-		hornet.LinearVelocity = player.GlobalPosition - hornetSpawnLoc1.GlobalPosition;
+		hornet.LinearVelocity = _player.GlobalPosition - hornetSpawnLoc1.GlobalPosition;
 	}
 }

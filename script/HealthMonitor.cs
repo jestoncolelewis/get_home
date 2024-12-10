@@ -5,8 +5,8 @@ public partial class HealthMonitor : Node
 {
 	public static HealthMonitor Instance { get; private set; }
 
-	private int max_health = 5;
-	public int current_health;
+	private int _maxHealth = 5;
+	private int _currentHealth;
 	
 	[Signal]
 	public delegate void OnHealthChangedEventHandler(int health);
@@ -16,7 +16,7 @@ public partial class HealthMonitor : Node
 	{
 		Instance = this;
 		
-		current_health = max_health;
+		_currentHealth = _maxHealth;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,23 +26,23 @@ public partial class HealthMonitor : Node
 
 	public void DecreaseHealth(int amount)
 	{
-		current_health -= amount;
+		_currentHealth -= amount;
 
-		if (current_health < 0)
+		if (_currentHealth < 0)
 		{
-			current_health = 0;
+			_currentHealth = 0;
 		}
-		EmitSignal(SignalName.OnHealthChanged, current_health);
+		EmitSignal(SignalName.OnHealthChanged, _currentHealth);
 	}
 
 	public void IncreaseHealth(int amount)
 	{
-		current_health += amount;
+		_currentHealth += amount;
 
-		if (current_health > max_health)
+		if (_currentHealth > _maxHealth)
 		{
-			current_health = max_health;
+			_currentHealth = _maxHealth;
 		}
-		EmitSignal(SignalName.OnHealthChanged, current_health);
+		EmitSignal(SignalName.OnHealthChanged, _currentHealth);
 	}
 }

@@ -5,18 +5,16 @@ public partial class Player : CharacterBody2D
 {
 	private const float Speed = 100.0f;
 	private const float JumpVelocity = -300.0f;
-	private int Health = 100;
-	private Vector2 ScreenSize;
+	private Vector2 _screenSize;
 
-	private PackedScene Bullet = GD.Load<PackedScene>("res://bullet.tscn");
-	private float RateOfFire = 0.5f;
-	private bool CanFire = true;
+	private PackedScene _bullet = GD.Load<PackedScene>("res://bullet.tscn");
+	private bool _canFire;
 	
-	PackedScene Hornet = GD.Load<PackedScene>("res://hornet.tscn");
+	private PackedScene _hornet = GD.Load<PackedScene>("res://hornet.tscn");
 
 	public override void _Ready()
 	{
-		ScreenSize = GetViewportRect().Size;
+		_screenSize = GetViewportRect().Size;
 	}
 
 	public override void _Process(double delta)
@@ -58,20 +56,8 @@ public partial class Player : CharacterBody2D
 		// if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
 	}
 
-	private void Start(Vector2 position)
-	{
-		Position = position;
-		Show();
-		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
-	}
-
 	private void _TakeDamageOnScreenExit()
 	{
-		Health -= Health;
-		if (Health <= 0)
-		{
-			GD.Print("Game Over");
-		}
 	}
 
 	private void _SkillLoop()
@@ -79,7 +65,7 @@ public partial class Player : CharacterBody2D
 		if (Input.IsActionJustPressed("shoot"))
 		{
 			GetNode<Node2D>("Turn Axis").Rotation = GetAngleTo(GetGlobalMousePosition());
-			var bulletInstance = Bullet.Instantiate<Bullet>();
+			var bulletInstance = _bullet.Instantiate<Bullet>();
 			bulletInstance.Position = GetNode<Node2D>("Turn Axis/SpawnPoint").GetGlobalPosition();
 			bulletInstance.Rotation = GetAngleTo(GetGlobalMousePosition());
 			GetParent().AddChild(bulletInstance);
@@ -90,7 +76,7 @@ public partial class Player : CharacterBody2D
 	{
 		if (body.IsInGroup("enemy"))
 		{
-			var hornetInstance = Hornet.Instantiate<Hornet>();
+			var hornetInstance = _hornet.Instantiate<Hornet>();
 			HealthMonitor.Instance.DecreaseHealth(hornetInstance.GetDamage());
 		}
 	}
