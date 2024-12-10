@@ -10,6 +10,7 @@ public partial class World : Node
 	public PackedScene EnemyScene { get; set; }
 	
 	private int _score;
+	private Timer _enemyTimer;
 
 	private EnemyMonitor _enemyMonitor;
 	
@@ -22,6 +23,8 @@ public partial class World : Node
 
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
+
+		_enemyTimer = GetNode<Timer>("EnemyTimer");
 	}
 
 	public override void _Process(double delta)
@@ -32,11 +35,12 @@ public partial class World : Node
 	{
 		player.Hide();
 		gameScreen.GameOverScreen(_score);
+		_enemyTimer.Stop();
 	}
 
 	public void NewGame()
 	{
-		GetNode<Timer>("EnemyTimer").Start();
+		_enemyTimer.Start();
 		player.Show();
 		_score = 0;
 		gameScreen.UpdateScore(_score);

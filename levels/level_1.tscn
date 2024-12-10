@@ -90,5 +90,6 @@ rotation = 2.85554
 
 [node name="EnemyTimer" type="Timer" parent="." index="10"]
 
+[connection signal="GameOver" from="GameScreen" to="." method="GameOver"]
 [connection signal="StartGame" from="GameScreen" to="." method="NewGame"]
 [connection signal="timeout" from="EnemyTimer" to="." method="OnEnemyTimerTimeout"]
