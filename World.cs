@@ -23,7 +23,7 @@ public partial class World : Node
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
 	}
-	
+
 	public override void _Process(double delta)
 	{
 	}
@@ -36,6 +36,7 @@ public partial class World : Node
 
 	public void NewGame()
 	{
+		GetNode<Timer>("EnemyTimer").Start();
 		player.Show();
 		_score = 0;
 		gameScreen.UpdateScore(_score);
@@ -54,13 +55,12 @@ public partial class World : Node
 		PathFollow2D hornetSpawnLoc1 = GetNode<PathFollow2D>("EnemyPath1/EnemySpawnLoc1");
 		hornetSpawnLoc1.ProgressRatio = GD.Randf();
 
-		float direction = hornetSpawnLoc1.Rotation + Mathf.Pi / 2;
-		
 		hornet.Position = hornetSpawnLoc1.Position;
-		
-		direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
-		hornet.Rotation = direction;
+
+		hornet.RotationDegrees = 0.0f;
 
 		AddChild(hornet);
+
+		hornet.LinearVelocity = player.GlobalPosition - hornetSpawnLoc1.GlobalPosition;
 	}
 }

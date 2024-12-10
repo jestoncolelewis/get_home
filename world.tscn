@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://duqldji1fybe1"]
+[gd_scene load_steps=10 format=3 uid="uid://duqldji1fybe1"]
 
 [ext_resource type="Script" path="res://World.cs" id="1_g54ss"]
 [ext_resource type="PackedScene" uid="uid://b2wjfwr8tn0t4" path="res://player.tscn" id="2_5r7st"]
 [ext_resource type="Texture2D" uid="uid://buc5xtx1kew3h" path="res://assets/art/background3.png" id="2_e2pwa"]
+[ext_resource type="PackedScene" uid="uid://c4k6idexsaau2" path="res://hornet.tscn" id="2_mieew"]
 [ext_resource type="Texture2D" uid="uid://dh1j0qx6b77oj" path="res://assets/art/background2.png" id="2_qt0m6"]
 [ext_resource type="Texture2D" uid="uid://dxd6r15qa2jkm" path="res://assets/art/background1.png" id="3_m4l5f"]
 [ext_resource type="Texture2D" uid="uid://dmkajfm14d1tb" path="res://assets/art/tileset.png" id="3_pw0t8"]
@@ -33,6 +34,7 @@ sources/1 = SubResource("TileSetAtlasSource_cjlvy")
 
 [node name="World" type="Node"]
 script = ExtResource("1_g54ss")
+EnemyScene = ExtResource("2_mieew")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(-25, -125)

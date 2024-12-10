@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://dkkm1omtnb4w2"]
+[gd_scene load_steps=8 format=4 uid="uid://dkkm1omtnb4w2"]
 
 [ext_resource type="PackedScene" uid="uid://duqldji1fybe1" path="res://world.tscn" id="1_gsv8r"]
-[ext_resource type="PackedScene" uid="uid://c4k6idexsaau2" path="res://hornet.tscn" id="2_v62xx"]
 [ext_resource type="PackedScene" uid="uid://brvn0sx656pp3" path="res://ui/GameScreen.tscn" id="4_0ygb4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x30y6"]
@@ -32,7 +31,6 @@ _data = {
 point_count = 6
 
 [node name="Level1" instance=ExtResource("1_gsv8r")]
-EnemyScene = ExtResource("2_v62xx")
 
 [node name="Player" parent="." index="1"]
 metadata/_edit_group_ = true
