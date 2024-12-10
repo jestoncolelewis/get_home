@@ -17,6 +17,7 @@ public partial class World : Node
 	public override void _Ready()
 	{
 		_player = GetNode<Player>("Player");
+		_player.SetCanFire(false);
 		_player.Hide();
 		_gameScreen = GetNode<GameScreen>("GameScreen");
 		_gameScreen.StartScreen();
@@ -33,6 +34,7 @@ public partial class World : Node
 
 	private void GameOver()
 	{
+		_player.SetCanFire(false);
 		_player.Hide();
 		_gameScreen.GameOverScreen(_score);
 		_enemyTimer.Stop();
@@ -42,6 +44,7 @@ public partial class World : Node
 	{
 		_enemyTimer.Start();
 		_player.Show();
+		_player.SetCanFire(true);
 		_score = 0;
 		_gameScreen.UpdateScore(_score);
 	}

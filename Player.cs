@@ -56,13 +56,18 @@ public partial class Player : CharacterBody2D
 		// if (Position.Y < ScreenSize.Y) {_TakeDamageOnScreenExit();}
 	}
 
+	public void SetCanFire(bool canFire)
+	{
+		_canFire = canFire;
+	}
+
 	private void _TakeDamageOnScreenExit()
 	{
 	}
 
 	private void _SkillLoop()
 	{
-		if (Input.IsActionJustPressed("shoot"))
+		if (Input.IsActionJustPressed("shoot") && _canFire)
 		{
 			GetNode<Node2D>("Turn Axis").Rotation = GetAngleTo(GetGlobalMousePosition());
 			var bulletInstance = _bullet.Instantiate<Bullet>();
