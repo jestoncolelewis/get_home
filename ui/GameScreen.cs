@@ -6,14 +6,22 @@ public partial class GameScreen : CanvasLayer
 	[Signal]
 	public delegate void StartGameEventHandler();
 	
-	Label timeLeft;
-	Timer timer;
+	private Label timeLeft;
+	private Timer timer;
+	private Label finalMessage;
+	private Label finalScore;
+
+	private GameManager _gameManager;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		timeLeft = GetNode<Label>("TimeLeft");
 		timer = GetNode<Timer>("Timer");
+		finalMessage = GetNode<Label>("FinalMessage");
+		finalScore = GetNode<Label>("FinalScore");
+
+		_gameManager = GetNode<GameManager>("/root/GameManager");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,6 +32,8 @@ public partial class GameScreen : CanvasLayer
 
 	public void StartScreen()
 	{
+		finalMessage.Hide();
+		finalScore.Hide();
 		GetNode<Label>("ScoreLabel").Hide();
 		GetNode<Node2D>("HealthBar").Hide();
 	}
@@ -40,5 +50,19 @@ public partial class GameScreen : CanvasLayer
 	public void UpdateScore(int score)
 	{
 		GetNode<Label>("ScoreLabel").Text = score.ToString();
+	}
+
+	public void GameOverScreen(int score)
+	{
+		timeLeft.Hide();
+		GetNode<Label>("ScoreLabel").Hide();
+		GetNode<Node2D>("HealthBar").Hide();
+		finalMessage.Show();
+		finalScore.Text = score.ToString();
+	}
+
+	public void OnTimerTimeout()
+	{
+		_gameManager.EmitSignal("GameOver");
 	}
 }

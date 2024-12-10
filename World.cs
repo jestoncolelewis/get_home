@@ -19,7 +19,6 @@ public partial class World : Node
 		player.Hide();
 		gameScreen = GetNode<GameScreen>("GameScreen");
 		gameScreen.StartScreen();
-		GetNode<Timer>("EnemyTimer").Start();
 
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
@@ -31,6 +30,8 @@ public partial class World : Node
 
 	public void GameOver()
 	{
+		player.Hide();
+		gameScreen.GameOverScreen(_score);
 	}
 
 	public void NewGame()
