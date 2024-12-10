@@ -34,15 +34,4 @@ public partial class HealthMonitor : Node
 		}
 		EmitSignal(SignalName.OnHealthChanged, _currentHealth);
 	}
-
-	public void IncreaseHealth(int amount)
-	{
-		_currentHealth += amount;
-
-		if (_currentHealth > _maxHealth)
-		{
-			_currentHealth = _maxHealth;
-		}
-		EmitSignal(SignalName.OnHealthChanged, _currentHealth);
-	}
 }
