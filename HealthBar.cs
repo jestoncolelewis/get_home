@@ -3,25 +3,25 @@ using System;
 
 public partial class HealthBar : Node2D
 {
-	[Export] private Texture2D _healthFull;
-	[Export] private Texture2D _healthEmpty;
+	[Export] private Texture2D HealthFull;
+	[Export] private Texture2D HealthEmpty;
 
-	private Sprite2D _health1;
-	private Sprite2D _health2;
-	private Sprite2D _health3;
-	private Sprite2D _health4;
-	private Sprite2D _health5;
+	private Sprite2D Health_1;
+	private Sprite2D Health_2;
+	private Sprite2D Health_3;
+	private Sprite2D Health_4;
+	private Sprite2D Health_5;
 	
 	private HealthMonitor _healthMonitor;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		_health1 = GetNode<Sprite2D>("Health_1");
-		_health2 = GetNode<Sprite2D>("Health_2");
-		_health3 = GetNode<Sprite2D>("Health_3");
-		_health4 = GetNode<Sprite2D>("Health_4");
-		_health5 = GetNode<Sprite2D>("Health_5");
+		Health_1 = GetNode<Sprite2D>("Health_1");
+		Health_2 = GetNode<Sprite2D>("Health_2");
+		Health_3 = GetNode<Sprite2D>("Health_3");
+		Health_4 = GetNode<Sprite2D>("Health_4");
+		Health_5 = GetNode<Sprite2D>("Health_5");
 		
 		_healthMonitor = GetNode<HealthMonitor>("/root/HealthMonitor");
 		_healthMonitor.OnHealthChanged += OnPlayerHealthChanged;
@@ -36,47 +36,47 @@ public partial class HealthBar : Node2D
 	{
 		if (currentHealth == 5)
 		{
-			_health5.Texture = _healthFull;
+			Health_5.Texture = HealthFull;
 		}
 		else if (currentHealth < 5)
 		{
-			_health5.Texture = _healthEmpty;
+			Health_5.Texture = HealthEmpty;
 		}
 		
 		if (currentHealth == 4)
 		{
-			_health4.Texture = _healthFull;
+			Health_4.Texture = HealthFull;
 		}
 		else if (currentHealth < 4)
 		{
-			_health4.Texture = _healthEmpty;
+			Health_4.Texture = HealthEmpty;
 		}
 		
 		if (currentHealth == 3)
 		{
-			_health3.Texture = _healthFull;
+			Health_3.Texture = HealthFull;
 		}
 		else if (currentHealth < 3)
 		{
-			_health3.Texture = _healthEmpty;
+			Health_3.Texture = HealthEmpty;
 		}
 		
 		if (currentHealth == 2)
 		{
-			_health2.Texture = _healthFull;
+			Health_2.Texture = HealthFull;
 		}
 		else if (currentHealth < 2)
 		{
-			_health2.Texture = _healthEmpty;
+			Health_2.Texture = HealthEmpty;
 		}
 
 		if (currentHealth == 1)
 		{
-			_health1.Texture = _healthFull;
+			Health_1.Texture = HealthFull;
 		}
 		else if (currentHealth < 1)
 		{
-			_health1.Texture = _healthEmpty;
+			Health_1.Texture = HealthEmpty;
 		}
 	}
 }

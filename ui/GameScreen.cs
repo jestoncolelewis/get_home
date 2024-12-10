@@ -15,7 +15,7 @@ public partial class GameScreen : CanvasLayer
 	private Timer _timer;
 	private Label _finalMessage;
 	private Label _finalScore;
-	private HealthBar _healthBar;
+	private Node2D _healthBar;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -26,7 +26,7 @@ public partial class GameScreen : CanvasLayer
 		_timer = GetNode<Timer>("Timer");
 		_finalMessage = GetNode<Label>("FinalMessage");
 		_finalScore = GetNode<Label>("FinalScore");
-		_healthBar = GetNode<HealthBar>("HealthBar");
+		_healthBar = GetNode<Node2D>("HealthBar");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
