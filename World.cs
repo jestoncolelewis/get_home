@@ -38,6 +38,7 @@ public partial class World : Node
 		_player.Hide();
 		_gameScreen.GameOverScreen(_score);
 		_enemyTimer.Stop();
+		GetTree().CallGroup("enemy", Node.MethodName.QueueFree);
 	}
 
 	private void NewGame()
