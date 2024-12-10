@@ -41,40 +41,22 @@ offset = Vector2(-25, -125)
 transform = Transform2D(1, 0, 0, 1, -25, -125)
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background"]
 texture = ExtResource("2_e2pwa")
 centered = false
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background"]
-position = Vector2(320, 0)
-texture = ExtResource("2_e2pwa")
-centered = false
-
 [node name="Midground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.9, 1)
-motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Midground"]
 texture = ExtResource("2_qt0m6")
 centered = false
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Midground"]
-position = Vector2(320, 0)
-texture = ExtResource("2_qt0m6")
-centered = false
-
 [node name="Foreground" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.8, 1)
-motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Foreground"]
-texture = ExtResource("3_m4l5f")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Foreground"]
-position = Vector2(320, 0)
 texture = ExtResource("3_m4l5f")
 centered = false
 
