@@ -10,6 +10,9 @@ public partial class HealthMonitor : Node
 	
 	[Signal]
 	public delegate void OnHealthChangedEventHandler(int health);
+
+	[Signal]
+	public delegate void OnHealthZeroedEventHandler();
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,9 +31,10 @@ public partial class HealthMonitor : Node
 	{
 		_currentHealth -= amount;
 
-		if (_currentHealth < 0)
+		if (_currentHealth <= 0)
 		{
 			_currentHealth = 0;
+			EmitSignal(SignalName.OnHealthZeroed);
 		}
 		EmitSignal(SignalName.OnHealthChanged, _currentHealth);
 	}

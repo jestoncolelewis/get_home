@@ -5,6 +5,7 @@ public partial class World : Node
 {
 	private Player _player;
 	private GameScreen _gameScreen;
+	private HealthMonitor _healthMonitor;
 	
 	[Export]
 	public PackedScene EnemyScene { get; set; }
@@ -24,6 +25,9 @@ public partial class World : Node
 
 		_enemyMonitor = GetNode<EnemyMonitor>("/root/EnemyMonitor");
 		_enemyMonitor.OnEnemyDestroyed += OnEnemyDestroyed;
+
+		_healthMonitor = GetNode<HealthMonitor>("/root/HealthMonitor");
+		_healthMonitor.OnHealthZeroed += GameOver;
 
 		_enemyTimer = GetNode<Timer>("EnemyTimer");
 	}
